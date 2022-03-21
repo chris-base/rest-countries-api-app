@@ -1,3 +1,14 @@
 .App {
   text-align: center;
 }
+
+#mainAppContaner {
+  padding: 0 50px;
+}
+
+#searchFilterContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
