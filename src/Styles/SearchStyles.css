@@ -20,7 +20,7 @@
   background-size: 30px;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(../Components/images/icon-search.svg);
+  background-image: url(/public/icon-search.svg);
   filter: brightness(0) saturate(100%) invert(57%) sepia(0%) saturate(0%) hue-rotate(360deg) brightness(92%) contrast(89%);
 }
 

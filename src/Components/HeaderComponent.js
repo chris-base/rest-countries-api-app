@@ -1,5 +1,6 @@
 import "../Styles/HeaderStyles.css";
-import iconMoon from "./images/icon-moon.svg";
+import iconMoonLight from "./images/icon-moon-light.svg";
+import iconMoonDark from "./images/icon-moon-dark.svg";
 
 const HeaderComponent = () => {
   return (
@@ -7,7 +8,7 @@ const HeaderComponent = () => {
       <p id='headerText'>Where in the world?</p>
 
       <div id='darkLightContainer'>
-        <div id='darkLightIcon' style={{ backgroundImage: "url(" + iconMoon + ")" }} />
+        <div id='darkLightIcon' style={{ backgroundImage: "url(" + iconMoonLight + ")" }} />
         <p id='darkLightText'>Dark Mode</p>
       </div>
     </div>
