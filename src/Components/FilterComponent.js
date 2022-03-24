@@ -21,8 +21,6 @@ const FilterComponent = () => {
     }
   };
 
-  console.log("HERE");
-
   return (
     <div id='filterContainer' ref={wrapperRef}>
       <div id='filterUnexpandedContainer' onClick={() => setFilterOpen(!filterOpen)}>

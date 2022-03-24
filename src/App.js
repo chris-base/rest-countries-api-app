@@ -2,6 +2,7 @@ import "./App.css";
 import HeaderComponent from "./Components/HeaderComponent";
 import SearchComponent from "./Components/SearchComponent";
 import FilterComponent from "./Components/FilterComponent";
+import CountriesContainerComponent from "./Components/CountriesContainerComponent";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
 
           <FilterComponent />
         </div>
+
+        <CountriesContainerComponent />
       </div>
     </div>
   );
