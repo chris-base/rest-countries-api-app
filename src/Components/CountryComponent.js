@@ -1,30 +1,26 @@
 import "../Styles/CountryStyles.css";
 
-const CountryComponent = ({ flagUrl }) => {
-  let countryFlag;
-
-  console.log(flagUrl);
-
+const CountryComponent = ({ countryInfo }) => {
   return (
     <div id='countryComponentContainer'>
-      <div id='countryFlagImage' style={{ backgroundImage: "url(" + flagUrl + ")" }} />
+      <div id='countryFlagImage' style={{ backgroundImage: "url(" + countryInfo.flags.svg + ")" }} />
 
       <div id='countryInfoContainer'>
-        <p id='countryInfoName'>Mexico</p>
+        <p id='countryInfoName'>{countryInfo.name.common}</p>
 
         <div className='countryInfoSectionContainer'>
           <p className='countryInfoBoldText'>Population:</p>
-          <p className='countryInfoText'>334,000</p>
+          <p className='countryInfoText'>{countryInfo.population.toLocaleString()}</p>
         </div>
 
         <div className='countryInfoSectionContainer'>
           <p className='countryInfoBoldText'>Region:</p>
-          <p className='countryInfoText'>Americas</p>
+          <p className='countryInfoText'>{countryInfo.region}</p>
         </div>
 
         <div className='countryInfoSectionContainer'>
           <p className='countryInfoBoldText'>Capital:</p>
-          <p className='countryInfoText'>Mexico City</p>
+          <p className='countryInfoText'>{countryInfo.capital}</p>
         </div>
       </div>
     </div>

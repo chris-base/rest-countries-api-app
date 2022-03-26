@@ -2,3 +2,10 @@
   margin-top: 50px;
   width: 100%;
 }
+
+#countriesGridContainer {
+  width: 100%;
+  display: grid;
+  justify-content: space-between;
+  gap: 100px;
+}
