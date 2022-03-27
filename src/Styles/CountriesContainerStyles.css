@@ -7,5 +7,12 @@
   width: 100%;
   display: grid;
   justify-content: space-between;
-  gap: 100px;
+  row-gap: 100px;
+}
+
+@media (max-width: 685px) {
+  #countriesGridContainer {
+    justify-content: center;
+    align-items: center;
+  }
 }

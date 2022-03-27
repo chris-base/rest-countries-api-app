@@ -4,12 +4,14 @@ import iconMoonDark from "./images/icon-moon-dark.svg";
 
 const HeaderComponent = () => {
   return (
-    <div id='appHeaderContainer'>
-      <p id='headerText'>Where in the world?</p>
+    <div id='appHeader'>
+      <div id='headerContainer'>
+        <p id='headerText'>Where in the world?</p>
 
-      <div id='darkLightContainer'>
-        <div id='darkLightIcon' style={{ backgroundImage: "url(" + iconMoonLight + ")" }} />
-        <p id='darkLightText'>Dark Mode</p>
+        <div id='darkLightContainer'>
+          <div id='darkLightIcon' style={{ backgroundImage: "url(" + iconMoonLight + ")" }} />
+          <p id='darkLightText'>Dark Mode</p>
+        </div>
       </div>
     </div>
   );

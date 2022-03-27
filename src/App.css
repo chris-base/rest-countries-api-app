@@ -1,13 +1,21 @@
 .App {
   text-align: center;
+  padding: 0 auto;
 }
 
 #mainAppContaner {
-  padding: 0 10%;
+  padding: 0 5%;
+  max-width: 1850px;
 }
 
 #searchFilterContainer {
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
+}
+
+@media (max-width: 685px) {
+  #searchFilterContainer {
+    flex-direction: column;
+  }
 }
