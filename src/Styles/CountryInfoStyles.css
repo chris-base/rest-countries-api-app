@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
+#mainCountryInfoComponent {
+  margin-top: 100px;
+  width: 100%;
+}
+
+#infoBackButton {
+  width: 140px;
+  height: 40px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#backButtonImg {
+  width: 24px;
+  height: 24px;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#backButtonText {
+  font-family: "Nunito Sans";
+  font-weight: 300;
+  font-size: 17px;
+  padding-left: 10px;
+}
+
+#countryInfoContainer {
+}
+
+#countryInfoFlag {
+  width: 200px;
+  height: 150px;
+  background-size: 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+}

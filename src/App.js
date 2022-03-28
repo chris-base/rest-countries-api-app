@@ -4,10 +4,12 @@ import HeaderComponent from "./Components/HeaderComponent";
 import SearchComponent from "./Components/SearchComponent";
 import FilterComponent from "./Components/FilterComponent";
 import CountriesContainerComponent from "./Components/CountriesContainerComponent";
+import CountryInfoComponent from "./Components/CountryInfoComponent";
 
 function App() {
   const [countryObject, setCountryObject] = useState(null);
   const [searchText, setSearchText] = useState("");
+  const [currCountry, setCurrCountry] = useState(17);
 
   let jsonArray = [];
   const allCountries = [];
@@ -60,15 +62,23 @@ function App() {
     <div className='App'>
       <HeaderComponent />
 
-      <div id='mainAppContaner'>
-        <div id='searchFilterContainer'>
-          <SearchComponent searchText={searchText} setSearchText={setSearchText} />
+      {currCountry === -1 ? (
+        <div className='mainAppContaner'>
+          <div id='searchFilterContainer'>
+            <SearchComponent searchText={searchText} setSearchText={setSearchText} />
 
-          <FilterComponent />
+            <FilterComponent />
+          </div>
+
+          {countryObject ? <CountriesContainerComponent countryObject={countryObject} /> : <></>}
         </div>
-
-        {countryObject ? <CountriesContainerComponent countryObject={countryObject} /> : <></>}
-      </div>
+      ) : countryObject ? (
+        <div className='mainAppContaner'>
+          <CountryInfoComponent setCurrCountry={setCurrCountry} currCountry={countryObject[currCountry]} />
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

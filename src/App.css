@@ -3,7 +3,7 @@
   padding: 0 auto;
 }
 
-#mainAppContaner {
+.mainAppContaner {
   padding: 0 5%;
   max-width: 1850px;
 }
