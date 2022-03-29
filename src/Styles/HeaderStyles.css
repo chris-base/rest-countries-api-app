@@ -47,3 +47,9 @@
   font-size: 16px;
   color: #111517;
 }
+
+@media (min-width: 1300px) {
+  #appHeader {
+    padding: 0 10%;
+  }
+}

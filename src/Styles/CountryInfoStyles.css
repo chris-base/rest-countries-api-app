@@ -31,13 +31,139 @@
   padding-left: 10px;
 }
 
-#countryInfoContainer {
+#countryInfoContainerSpecial {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  margin-top: 50px;
+  /* background-color: yellow; */
 }
 
 #countryInfoFlag {
-  width: 200px;
-  height: 150px;
-  background-size: 150px;
+  width: 45%;
+  max-width: 600px;
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
+  /* background-color: blue; */
+}
+
+#countryInfoEntireContainer {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  max-width: 600px;
+}
+
+#countryInfoMainText {
+  font-family: "Nunito Sans";
+  font-weight: 900;
+  font-size: 30px;
+  text-align: left;
+}
+
+#countryInfoMainInfo {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: green; */
+}
+
+#countryInfoSectionOne {
+}
+
+.infoContainer {
+  display: flex;
+}
+
+.infoTextBold {
+  white-space: nowrap;
+  font-family: "Nunito Sans";
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.infoTextNormal {
+  font-family: "Nunito Sans";
+  font-weight: 300;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+#countryInfoSectionTwo {
+}
+
+#countryBorderContainer {
+  display: flex;
+}
+
+#countryBorderText {
+  font-family: "Nunito Sans";
+  font-weight: 600;
+  font-size: 17px;
+  text-align: left;
+}
+
+#countryBorders {
+}
+
+@media (max-width: 1300px) {
+  #countryInfoEntireContainer {
+    width: 50%;
+  }
+}
+
+@media (max-width: 700px) {
+  #mainCountryInfoComponent {
+    margin-top: 30px;
+  }
+
+  #countryInfoContainerSpecial {
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+
+  #countryInfoFlag {
+    width: 100%;
+    height: 500px;
+    max-height: 500px;
+    background-position: top;
+  }
+
+  #countryInfoEntireContainer {
+    width: 100%;
+  }
+
+  #countryInfoMainText {
+    margin-bottom: 20px;
+  }
+
+  #countryInfoMainInfo {
+    flex-direction: column;
+  }
+
+  #countryInfoSectionOne {
+  }
+
+  .infoContainer {
+    line-height: 0;
+  }
+
+  #countryInfoSectionTwo {
+    margin-top: 50px;
+  }
+
+  #countryBorderContainer {
+    margin-top: 20px;
+  }
+
+  #countryBorderText {
+  }
+}
+
+@media (max-width: 500px) {
+  #countryInfoFlag {
+    height: 270px;
+  }
 }

@@ -70,7 +70,7 @@ function App() {
             <FilterComponent />
           </div>
 
-          {countryObject ? <CountriesContainerComponent countryObject={countryObject} /> : <></>}
+          {countryObject ? <CountriesContainerComponent countryObject={countryObject} setCurrCountry={setCurrCountry} /> : <></>}
         </div>
       ) : countryObject ? (
         <div className='mainAppContaner'>

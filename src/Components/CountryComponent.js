@@ -1,8 +1,8 @@
 import "../Styles/CountryStyles.css";
 
-const CountryComponent = ({ countryInfo }) => {
+const CountryComponent = ({ countryInfo, setCurrCountry, index }) => {
   return (
-    <div id='countryComponentContainer'>
+    <div id='countryComponentContainer' onClick={() => setCurrCountry(index)}>
       <div id='countryFlagImage' style={{ backgroundImage: "url(" + countryInfo.flags.svg + ")" }} />
 
       <div id='countryInfoContainer'>
