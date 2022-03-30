@@ -1,13 +1,9 @@
 import "../Styles/CountryInfoStyles.css";
 import iconBackLight from "./images/icon-back-light.svg";
 
-const CountryInfoComponent = ({ setCurrCountry, currCountry }) => {
+const CountryInfoComponent = ({ setCurrCountry, currCountry, countryObject }) => {
   const reformatLanguanges = () => {
     let langOutput = "";
-    // Object.keys(currCountry.languages).map((lang, index) => {
-    //   // return index === 0 ? currCountry.languages[lang] : ", " + currCountry.languages[lang];
-    //   // langs.push(lang);
-    // });
 
     for (let i = Object.keys(currCountry.languages).length - 1; i >= 0; i--) {
       langOutput +=
@@ -15,6 +11,42 @@ const CountryInfoComponent = ({ setCurrCountry, currCountry }) => {
     }
 
     return langOutput;
+  };
+
+  const createCountryBordersArray = () => {
+    const shortenedBorders = [...currCountry.borders];
+    const tempBordersArray = [];
+    const output = [];
+
+    for (let i = 0; i < countryObject.length; i++) {
+      for (let j = 0; j < shortenedBorders.length; j++) {
+        if (countryObject[i].cca3 === shortenedBorders[j]) {
+          tempBordersArray.push([countryObject[i].name.common, i, countryObject[i].cca3]);
+        }
+      }
+
+      if (tempBordersArray.length === shortenedBorders.length) {
+        break;
+      }
+    }
+
+    for (let i = 0; i < tempBordersArray.length; i++) {
+      output.push(
+        <p
+          className='borderButton'
+          onClick={() => {
+            setCurrCountry(tempBordersArray[i][1]);
+          }}
+          key={i}
+        >
+          {tempBordersArray[i][0]}
+        </p>
+      );
+    }
+
+    console.log("Logging Borders");
+
+    return output;
   };
 
   return (
@@ -77,13 +109,7 @@ const CountryInfoComponent = ({ setCurrCountry, currCountry }) => {
 
               <div className='infoContainer'>
                 <p className='infoTextBold'>Languages:</p>
-                <p className='infoTextNormal'>
-                  {/* {Object.keys(currCountry.languages).map((lang, index) => {
-                    return index === 0 ? currCountry.languages[lang] : ", " + currCountry.languages[lang];
-                  })} */}
-
-                  {reformatLanguanges()}
-                </p>
+                <p className='infoTextNormal'>{reformatLanguanges()}</p>
               </div>
             </div>
           </div>
@@ -91,7 +117,7 @@ const CountryInfoComponent = ({ setCurrCountry, currCountry }) => {
           <div id='countryBorderContainer'>
             <p id='countryBorderText'>Border Countries:</p>
 
-            <div id='countryBorders'></div>
+            <div id='countryBorders'>{currCountry.borders ? createCountryBordersArray() : <></>}</div>
           </div>
         </div>
       </div>

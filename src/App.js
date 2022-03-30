@@ -9,7 +9,7 @@ import CountryInfoComponent from "./Components/CountryInfoComponent";
 function App() {
   const [countryObject, setCountryObject] = useState(null);
   const [searchText, setSearchText] = useState("");
-  const [currCountry, setCurrCountry] = useState(17);
+  const [currCountry, setCurrCountry] = useState(-1);
 
   let jsonArray = [];
   const allCountries = [];
@@ -74,7 +74,7 @@ function App() {
         </div>
       ) : countryObject ? (
         <div className='mainAppContaner'>
-          <CountryInfoComponent setCurrCountry={setCurrCountry} currCountry={countryObject[currCountry]} />
+          <CountryInfoComponent setCurrCountry={setCurrCountry} currCountry={countryObject[currCountry]} countryObject={countryObject} />
         </div>
       ) : (
         <></>
