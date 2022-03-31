@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import "../Styles/CountriesContainerStyles.css";
 import CountryComponent from "./CountryComponent";
 
-const CountriesContainerComponent = ({ countryObject, setCurrCountry }) => {
+const CountriesContainerComponent = ({ countryObject, setCurrCountry, searchText }) => {
   const [clientWidth, setClientWidth] = useState(window.innerWidth);
-  console.log(window.innerWidth);
 
   const updateColumnAmountBySize = () => {
     if (clientWidth < 685) {
@@ -28,7 +27,11 @@ const CountriesContainerComponent = ({ countryObject, setCurrCountry }) => {
       {countryObject ? (
         <div id='countriesGridContainer' style={updateColumnAmountBySize()}>
           {[...countryObject].map((country, index) => {
-            return <CountryComponent countryInfo={country} setCurrCountry={setCurrCountry} index={index} key={index} />;
+            return country.name.common.toLowerCase().includes(searchText) ? (
+              <CountryComponent countryInfo={country} setCurrCountry={setCurrCountry} index={index} key={index} />
+            ) : (
+              <></>
+            );
           })}
         </div>
       ) : (

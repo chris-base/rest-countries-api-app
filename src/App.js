@@ -55,7 +55,7 @@ function App() {
   if (!countryObject) {
     fetchCountries();
   } else {
-    console.log(countryObject);
+    // console.log(countryObject);
   }
 
   return (
@@ -70,7 +70,11 @@ function App() {
             <FilterComponent />
           </div>
 
-          {countryObject ? <CountriesContainerComponent countryObject={countryObject} setCurrCountry={setCurrCountry} /> : <></>}
+          {countryObject ? (
+            <CountriesContainerComponent countryObject={countryObject} setCurrCountry={setCurrCountry} searchText={searchText} />
+          ) : (
+            <></>
+          )}
         </div>
       ) : countryObject ? (
         <div className='mainAppContaner'>
