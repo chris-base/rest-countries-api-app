@@ -9,6 +9,7 @@ import CountryInfoComponent from "./Components/CountryInfoComponent";
 function App() {
   const [countryObject, setCountryObject] = useState(null);
   const [searchText, setSearchText] = useState("");
+  const [filterRegion, setFilterRegion] = useState("");
   const [currCountry, setCurrCountry] = useState(-1);
 
   let jsonArray = [];
@@ -55,7 +56,7 @@ function App() {
   if (!countryObject) {
     fetchCountries();
   } else {
-    // console.log(countryObject);
+    console.log(countryObject);
   }
 
   return (
@@ -67,11 +68,16 @@ function App() {
           <div id='searchFilterContainer'>
             <SearchComponent searchText={searchText} setSearchText={setSearchText} />
 
-            <FilterComponent />
+            <FilterComponent filterRegion={filterRegion} setFilterRegion={setFilterRegion} />
           </div>
 
           {countryObject ? (
-            <CountriesContainerComponent countryObject={countryObject} setCurrCountry={setCurrCountry} searchText={searchText} />
+            <CountriesContainerComponent
+              countryObject={countryObject}
+              setCurrCountry={setCurrCountry}
+              searchText={searchText}
+              filterRegion={filterRegion}
+            />
           ) : (
             <></>
           )}

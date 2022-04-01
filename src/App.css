@@ -6,6 +6,7 @@
 .mainAppContaner {
   padding: 0 5%;
   max-width: 1850px;
+  margin-bottom: 100px;
 }
 
 #searchFilterContainer {
