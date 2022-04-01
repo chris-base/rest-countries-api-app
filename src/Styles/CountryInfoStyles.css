@@ -126,6 +126,15 @@
   font-size: 16px;
 }
 
+#borderNoneText {
+  font-family: "Nunito Sans";
+  font-weight: 300;
+  font-size: 15px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 1300px) {
   #countryInfoEntireContainer {
     width: 50%;

@@ -71,45 +71,47 @@ const CountryInfoComponent = ({ setCurrCountry, currCountry, countryObject }) =>
 
               <div className='infoContainer'>
                 <p className='infoTextBold'>Population:</p>
-                <p className='infoTextNormal'>{currCountry.population.toLocaleString()}</p>
+                <p className='infoTextNormal'>{currCountry.population ? currCountry.population.toLocaleString() : "N/A"}</p>
               </div>
 
               <div className='infoContainer'>
                 <p className='infoTextBold'>Region:</p>
-                <p className='infoTextNormal'>{currCountry.region}</p>
+                <p className='infoTextNormal'>{currCountry.region ? currCountry.region : "N/A"}</p>
               </div>
 
               <div className='infoContainer'>
                 <p className='infoTextBold'>Sub Region:</p>
                 <p className='infoTextNormal' style={{ whiteSpace: "nowrap" }}>
-                  {currCountry.subregion}
+                  {currCountry.subregion ? currCountry.subregion : "N/A"}
                 </p>
               </div>
 
               <div className='infoContainer'>
                 <p className='infoTextBold'>Capital:</p>
-                <p className='infoTextNormal'>{currCountry.capital}</p>
+                <p className='infoTextNormal'>{currCountry.capital ? currCountry.capital : "N/A"}</p>
               </div>
             </div>
 
             <div id='countryInfoSectionTwo'>
               <div className='infoContainer'>
                 <p className='infoTextBold'>Top Level Domain:</p>
-                <p className='infoTextNormal'>{currCountry.tld}</p>
+                <p className='infoTextNormal'>{currCountry.tld ? currCountry.tld : "N/A"}</p>
               </div>
 
               <div className='infoContainer'>
                 <p className='infoTextBold'>Currencies:</p>
                 <p className='infoTextNormal'>
-                  {Object.keys(currCountry.currencies).map((currency, index) => {
-                    return index === 0 ? currCountry.currencies[currency].name : ", " + currCountry.currencies[currency].name;
-                  })}
+                  {currCountry.currencies
+                    ? Object.keys(currCountry.currencies).map((currency, index) => {
+                        return index === 0 ? currCountry.currencies[currency].name : ", " + currCountry.currencies[currency].name;
+                      })
+                    : "N/A"}
                 </p>
               </div>
 
               <div className='infoContainer'>
                 <p className='infoTextBold'>Languages:</p>
-                <p className='infoTextNormal'>{reformatLanguanges()}</p>
+                <p className='infoTextNormal'>{currCountry.languages ? reformatLanguanges() : "N/A"}</p>
               </div>
             </div>
           </div>
@@ -117,7 +119,7 @@ const CountryInfoComponent = ({ setCurrCountry, currCountry, countryObject }) =>
           <div id='countryBorderContainer'>
             <p id='countryBorderText'>Border Countries:</p>
 
-            <div id='countryBorders'>{currCountry.borders ? createCountryBordersArray() : <></>}</div>
+            <div id='countryBorders'>{currCountry.borders ? createCountryBordersArray() : <p id={"borderNoneText"}>None</p>}</div>
           </div>
         </div>
       </div>
