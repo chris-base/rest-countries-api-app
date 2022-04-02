@@ -36,7 +36,7 @@ const CountryComponent = ({ countryInfo, setCurrCountry, index, darkLightMode })
           <p className='countryInfoBoldText' style={darkLightMode ? { color: "#ffffff" } : { color: "#111517" }}>
             Capital:
           </p>
-          <p className='countryInfoText' style={darkLightMode ? { color: "#ffffff" } : { color: "#111517" }}></p>
+          <p className='countryInfoText' style={darkLightMode ? { color: "#ffffff" } : { color: "#111517" }}>
             {countryInfo.capital}
           </p>
         </div>

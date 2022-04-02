@@ -22,18 +22,17 @@
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(/public/icon-search.svg);
-  filter: brightness(0) saturate(100%) invert(57%) sepia(0%) saturate(0%) hue-rotate(360deg) brightness(92%) contrast(89%);
 }
 
 #searchInput {
   font-family: "Nunito Sans";
   font-weight: 800;
   font-size: 14px;
-  color: #858585;
   border: none;
   height: 95%;
   width: 70%;
   outline: none;
+  background-color: transparent;
 }
 
 @media (max-width: 685px) {

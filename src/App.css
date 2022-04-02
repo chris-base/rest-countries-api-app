@@ -1,12 +1,12 @@
 .App {
   text-align: center;
   padding: 0 auto;
+  min-height: 100vh;
 }
 
 .mainAppContaner {
-  padding: 0 5%;
+  padding: 0 5% 100px 5%;
   max-width: 1850px;
-  margin-bottom: 100px;
 }
 
 #searchFilterContainer {
@@ -23,6 +23,6 @@
 
 @media (min-width: 1300px) {
   .mainAppContaner {
-    padding: 0 10%;
+    padding: 0 10% 100px 10%;
   }
 }

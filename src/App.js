@@ -8,6 +8,7 @@ import CountryInfoComponent from "./Components/CountryInfoComponent";
 
 function App() {
   const [countryObject, setCountryObject] = useState(null);
+  const [darkLightMode, setDarkLightMode] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [filterRegion, setFilterRegion] = useState("");
   const [currCountry, setCurrCountry] = useState(-1);
@@ -60,15 +61,15 @@ function App() {
   }
 
   return (
-    <div className='App'>
-      <HeaderComponent />
+    <div className='App' style={darkLightMode ? { backgroundColor: "#202c37" } : { backgroundColor: "white" }}>
+      <HeaderComponent darkLightMode={darkLightMode} setDarkLightMode={setDarkLightMode} />
 
       {currCountry === -1 ? (
         <div className='mainAppContaner'>
           <div id='searchFilterContainer'>
-            <SearchComponent searchText={searchText} setSearchText={setSearchText} />
+            <SearchComponent searchText={searchText} setSearchText={setSearchText} darkLightMode={darkLightMode} />
 
-            <FilterComponent filterRegion={filterRegion} setFilterRegion={setFilterRegion} />
+            <FilterComponent filterRegion={filterRegion} setFilterRegion={setFilterRegion} darkLightMode={darkLightMode} />
           </div>
 
           {countryObject ? (
@@ -77,6 +78,7 @@ function App() {
               setCurrCountry={setCurrCountry}
               searchText={searchText}
               filterRegion={filterRegion}
+              darkLightMode={darkLightMode}
             />
           ) : (
             <></>

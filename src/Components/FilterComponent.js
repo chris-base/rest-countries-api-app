@@ -3,7 +3,7 @@ import "../Styles/FilterStyles.css";
 import iconDropLight from "./images/icon-drop-light.svg";
 import iconDropDark from "./images/icon-drop-dark.svg";
 
-const FilterComponent = ({ filterRegion, setFilterRegion }) => {
+const FilterComponent = ({ filterRegion, setFilterRegion, darkLightMode }) => {
   const [filterOpen, setFilterOpen] = useState(false);
 
   const wrapperRef = useRef(null);
@@ -23,20 +23,30 @@ const FilterComponent = ({ filterRegion, setFilterRegion }) => {
 
   return (
     <div id='filterContainer' ref={wrapperRef}>
-      <div id='filterUnexpandedContainer' onClick={() => setFilterOpen(!filterOpen)}>
-        <p id='filterText'>{filterRegion === "" ? "Filter by Region" : filterRegion}</p>
+      <div
+        id='filterUnexpandedContainer'
+        onClick={() => setFilterOpen(!filterOpen)}
+        style={darkLightMode ? { backgroundColor: "#2b3945" } : { backgroundColor: "white" }}
+      >
+        <p id='filterText' style={darkLightMode ? { color: "#ffffff" } : { color: "#111517" }}>
+          {filterRegion === "" ? "Filter by Region" : filterRegion}
+        </p>
 
-        <div id='filterDropButton' style={{ backgroundImage: "url( " + iconDropLight + ")" }} />
+        <div
+          id='filterDropButton'
+          style={darkLightMode ? { backgroundImage: "url( " + iconDropDark + ")" } : { backgroundImage: "url( " + iconDropLight + ")" }}
+        />
       </div>
 
       {filterOpen ? (
-        <div id='filterExpandedContainer'>
+        <div id='filterExpandedContainer' style={darkLightMode ? { backgroundColor: "#2b3945" } : { backgroundColor: "white" }}>
           <p
             className='filterText'
             onClick={() => {
               setFilterRegion("");
               setFilterOpen(false);
             }}
+            style={darkLightMode ? { color: "#ffffff" } : { color: "#111517" }}
           >
             All
           </p>
@@ -46,6 +56,7 @@ const FilterComponent = ({ filterRegion, setFilterRegion }) => {
               setFilterRegion("Africa");
               setFilterOpen(false);
             }}
+            style={darkLightMode ? { color: "#ffffff" } : { color: "#111517" }}
           >
             Africa
           </p>
@@ -55,6 +66,7 @@ const FilterComponent = ({ filterRegion, setFilterRegion }) => {
               setFilterRegion("Americas");
               setFilterOpen(false);
             }}
+            style={darkLightMode ? { color: "#ffffff" } : { color: "#111517" }}
           >
             Americas
           </p>
@@ -64,6 +76,7 @@ const FilterComponent = ({ filterRegion, setFilterRegion }) => {
               setFilterRegion("Asia");
               setFilterOpen(false);
             }}
+            style={darkLightMode ? { color: "#ffffff" } : { color: "#111517" }}
           >
             Asia
           </p>
@@ -73,6 +86,7 @@ const FilterComponent = ({ filterRegion, setFilterRegion }) => {
               setFilterRegion("Europe");
               setFilterOpen(false);
             }}
+            style={darkLightMode ? { color: "#ffffff" } : { color: "#111517" }}
           >
             Europe
           </p>
@@ -82,6 +96,7 @@ const FilterComponent = ({ filterRegion, setFilterRegion }) => {
               setFilterRegion("Oceania");
               setFilterOpen(false);
             }}
+            style={darkLightMode ? { color: "#ffffff" } : { color: "#111517" }}
           >
             Oceania
           </p>
