@@ -1,7 +1,8 @@
 import "../Styles/CountryInfoStyles.css";
 import iconBackLight from "./images/icon-back-light.svg";
+import iconBackDark from "./images/icon-back-dark.svg";
 
-const CountryInfoComponent = ({ setCurrCountry, currCountry, countryObject }) => {
+const CountryInfoComponent = ({ setCurrCountry, currCountry, countryObject, darkLightMode }) => {
   const reformatLanguanges = () => {
     let langOutput = "";
 
@@ -37,6 +38,7 @@ const CountryInfoComponent = ({ setCurrCountry, currCountry, countryObject }) =>
           onClick={() => {
             setCurrCountry(tempBordersArray[i][1]);
           }}
+          style={darkLightMode ? { backgroundColor: "#2b3945", color: "white" } : { backgroundColor: "white", color: "#111517" }}
           key={i}
         >
           {tempBordersArray[i][0]}
@@ -51,56 +53,94 @@ const CountryInfoComponent = ({ setCurrCountry, currCountry, countryObject }) =>
 
   return (
     <div id='mainCountryInfoComponent'>
-      <div id='infoBackButton' onClick={() => setCurrCountry(-1)}>
-        <div id='backButtonImg' style={{ backgroundImage: "url(" + iconBackLight + ")" }} />
-        <p id='backButtonText'>Back</p>
+      <div
+        id='infoBackButton'
+        onClick={() => setCurrCountry(-1)}
+        style={darkLightMode ? { backgroundColor: "#2b3945" } : { backgroundColor: "white" }}
+      >
+        <div
+          id='backButtonImg'
+          style={darkLightMode ? { backgroundImage: "url(" + iconBackDark + ")" } : { backgroundImage: "url(" + iconBackLight + ")" }}
+        />
+        <p id='backButtonText' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
+          Back
+        </p>
       </div>
 
       <div id='countryInfoContainerSpecial'>
         <div id='countryInfoFlag' style={{ backgroundImage: "url(" + currCountry.flags.svg + ")" }} />
 
         <div id='countryInfoEntireContainer'>
-          <p id='countryInfoMainText'>{currCountry.name.common}</p>
+          <p id='countryInfoMainText' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
+            {currCountry.name.common}
+          </p>
 
           <div id='countryInfoMainInfo'>
             <div id='countryInfoSectionOne'>
               <div className='infoContainer'>
-                <p className='infoTextBold'>Native Name:</p>
-                <p className='infoTextNormal'>{currCountry.name.common}</p>
+                <p className='infoTextBold' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
+                  Native Name:
+                </p>
+                <p className='infoTextNormal' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
+                  {currCountry.name.common}
+                </p>
               </div>
 
               <div className='infoContainer'>
-                <p className='infoTextBold'>Population:</p>
-                <p className='infoTextNormal'>{currCountry.population ? currCountry.population.toLocaleString() : "N/A"}</p>
+                <p className='infoTextBold' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
+                  Population:
+                </p>
+                <p className='infoTextNormal' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
+                  {currCountry.population ? currCountry.population.toLocaleString() : "N/A"}
+                </p>
               </div>
 
               <div className='infoContainer'>
-                <p className='infoTextBold'>Region:</p>
-                <p className='infoTextNormal'>{currCountry.region ? currCountry.region : "N/A"}</p>
+                <p className='infoTextBold' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
+                  Region:
+                </p>
+                <p className='infoTextNormal' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
+                  {currCountry.region ? currCountry.region : "N/A"}
+                </p>
               </div>
 
               <div className='infoContainer'>
-                <p className='infoTextBold'>Sub Region:</p>
-                <p className='infoTextNormal' style={{ whiteSpace: "nowrap" }}>
+                <p className='infoTextBold' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
+                  Sub Region:
+                </p>
+                <p
+                  className='infoTextNormal'
+                  style={darkLightMode ? { color: "white", whiteSpace: "nowrap" } : { color: "#111517", whiteSpace: "nowrap" }}
+                >
                   {currCountry.subregion ? currCountry.subregion : "N/A"}
                 </p>
               </div>
 
               <div className='infoContainer'>
-                <p className='infoTextBold'>Capital:</p>
-                <p className='infoTextNormal'>{currCountry.capital ? currCountry.capital : "N/A"}</p>
+                <p className='infoTextBold' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
+                  Capital:
+                </p>
+                <p className='infoTextNormal' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
+                  {currCountry.capital ? currCountry.capital : "N/A"}
+                </p>
               </div>
             </div>
 
             <div id='countryInfoSectionTwo'>
               <div className='infoContainer'>
-                <p className='infoTextBold'>Top Level Domain:</p>
-                <p className='infoTextNormal'>{currCountry.tld ? currCountry.tld : "N/A"}</p>
+                <p className='infoTextBold' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
+                  Top Level Domain:
+                </p>
+                <p className='infoTextNormal' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
+                  {currCountry.tld ? currCountry.tld : "N/A"}
+                </p>
               </div>
 
               <div className='infoContainer'>
-                <p className='infoTextBold'>Currencies:</p>
-                <p className='infoTextNormal'>
+                <p className='infoTextBold' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
+                  Currencies:
+                </p>
+                <p className='infoTextNormal' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
                   {currCountry.currencies
                     ? Object.keys(currCountry.currencies).map((currency, index) => {
                         return index === 0 ? currCountry.currencies[currency].name : ", " + currCountry.currencies[currency].name;
@@ -110,16 +150,30 @@ const CountryInfoComponent = ({ setCurrCountry, currCountry, countryObject }) =>
               </div>
 
               <div className='infoContainer'>
-                <p className='infoTextBold'>Languages:</p>
-                <p className='infoTextNormal'>{currCountry.languages ? reformatLanguanges() : "N/A"}</p>
+                <p className='infoTextBold' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
+                  Languages:
+                </p>
+                <p className='infoTextNormal' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
+                  {currCountry.languages ? reformatLanguanges() : "N/A"}
+                </p>
               </div>
             </div>
           </div>
 
           <div id='countryBorderContainer'>
-            <p id='countryBorderText'>Border Countries:</p>
+            <p id='countryBorderText' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
+              Border Countries:
+            </p>
 
-            <div id='countryBorders'>{currCountry.borders ? createCountryBordersArray() : <p id={"borderNoneText"}>None</p>}</div>
+            <div id='countryBorders'>
+              {currCountry.borders ? (
+                createCountryBordersArray()
+              ) : (
+                <p id='borderNoneText' style={darkLightMode ? { color: "white" } : { color: "#111517" }}>
+                  None
+                </p>
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ import CountryInfoComponent from "./Components/CountryInfoComponent";
 
 function App() {
   const [countryObject, setCountryObject] = useState(null);
-  const [darkLightMode, setDarkLightMode] = useState(false);
+  const [darkLightMode, setDarkLightMode] = useState(true);
   const [searchText, setSearchText] = useState("");
   const [filterRegion, setFilterRegion] = useState("");
   const [currCountry, setCurrCountry] = useState(-1);
@@ -86,7 +86,12 @@ function App() {
         </div>
       ) : countryObject ? (
         <div className='mainAppContaner'>
-          <CountryInfoComponent setCurrCountry={setCurrCountry} currCountry={countryObject[currCountry]} countryObject={countryObject} />
+          <CountryInfoComponent
+            setCurrCountry={setCurrCountry}
+            currCountry={countryObject[currCountry]}
+            countryObject={countryObject}
+            darkLightMode={darkLightMode}
+          />
         </div>
       ) : (
         <></>
