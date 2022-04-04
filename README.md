@@ -10,11 +10,11 @@ This is a solution to the [REST Countries API with color theme switcher challeng
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
+
+Your challenge is to integrate with the [REST Countries V2 API](https://restcountries.com/#api-endpoints-v2) to pull country data and display it like in the designs.
 
 ### The challenge
 
@@ -25,18 +25,20 @@ Users should be able to:
 - Filter countries by region
 - Click on a country to see more detailed information on a separate page
 - Click through to the border countries on the detail page
-- Toggle the color scheme between light and dark mode _(optional)_
+- Toggle the color scheme between light and dark mode
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./public/rest-countries-api-screenshot.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [My solution]()
+- Live Site URL: [Live Site](https://chris-base.github.io/rest-countries-api-app/)
 
 ## My process
+
+Started with clean React app, made layouts for both pages (Countries List Page/Individual country info page). Made layouts for both desktop and mobile sized screens. Made interactive sections (Input element for search bar/drop down for region selector). Made API calls using [Rest Countries](https://restcountries.com/#api-endpoints-v2). Added dark/light toggleable.
 
 ### Built with
 
@@ -46,13 +48,7 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-
-### What I learned
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [REST Countries V2 API](https://restcountries.com/#api-endpoints-v2)
 
 ## Author
 
